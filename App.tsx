@@ -29,7 +29,8 @@ const Drawer = createDrawerNavigator();
 const Navigation: React.FC = () => {
   const { isDark, colors } = useTheme();
   const { width: winWidth } = useWindowDimensions();
-  const drawerWidth = Math.min(Math.max(winWidth * 0.78, 280), 360);
+  const drawerWidth = Math.min(Math.max(winWidth * 0.74, 270), 340);
+  const drawerRadius = 24;
   const navTheme = {
     ...(isDark ? DarkTheme : DefaultTheme),
     colors: {
@@ -49,7 +50,12 @@ const Navigation: React.FC = () => {
         screenOptions={{
           headerShown: false,
           drawerType: 'front',
-          drawerStyle: { width: drawerWidth },
+          drawerStyle: {
+            width: drawerWidth,
+            borderTopRightRadius: drawerRadius,
+            borderBottomRightRadius: drawerRadius,
+            overflow: 'hidden',
+          },
         }}
         drawerContent={DrawerContent}
       >

@@ -306,6 +306,9 @@ const CSS = `
   .drawer {
     position: absolute; top: 0; bottom: 0; left: 0; width: 36vh; z-index: 10;
     display: flex; flex-direction: column;
+    border-top-right-radius: 2.4vh;
+    border-bottom-right-radius: 2.4vh;
+    overflow: hidden;
   }
   .drawer-brand {
     min-height: 7.2vh; padding: 0 2.6vh; display: flex; align-items: center;
